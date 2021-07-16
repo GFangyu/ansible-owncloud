@@ -29,16 +29,8 @@
 - name: Create the occ Helper Script
   template:
     src: occ
-    dest: /usr/local/bin/occ
+    dest: /usr/bin/occ
     mode: u+x,g+x,o+x
-
-- name: Create occ symbolic link
-  file:
-    src: '{{item.src}}'
-    dest: '{{item.dest}}'
-    state: link
-  with_items:
-    - {src: /usr/local/bin/occ, dest: /usr/bin/occ}
 
 - name: Change directory ownership and group ownership
   shell: chown -R {{owncloud_owner}}:{{owncloud_owner}} /data/wwwroot
