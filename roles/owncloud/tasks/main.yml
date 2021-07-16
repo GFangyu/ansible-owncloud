@@ -64,7 +64,7 @@
     memcache.local \
     --value '\OC\Memcache\APCu'
     occ config:system:set \
-    memcache.locking \
+    memcache.distributed \
     --value '\OC\Memcache\Redis'
     occ config:system:set \
     redis \
